@@ -1,6 +1,6 @@
-=== Greenshift Query and Meta Addon ===
+=== Greenshift Spline 3d for Gutenberg ===
 Contributors: wpsoul
-Tags: gutenberg, block, query, full site editor
+Tags: gutenberg, spline3d, 3d, webxr
 Author: GreenshiftWP
 Author URI: https://greenshiftwp.com/
 Requires at least: 5.9
@@ -8,4 +8,4 @@ Tested up to: 6.1
 Requires PHP: 7.0
 Stable tag: 0.6
 
-Get values from any custom meta, attributes or custom taxonomy. Use better query block. Add post views, thumbs counter.
+Use Spline 3d inside Gutenberg

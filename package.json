@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "@splinetool/react-spline": "^2.2.1",
-    "@splinetool/runtime": "^0.9.64"
+    "@splinetool/runtime": "^0.9.66"
   }
 }

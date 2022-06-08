@@ -6,12 +6,11 @@
 
 // Import wp dependencies
 import { __ } from '@wordpress/i18n';
-import { useState} from '@wordpress/element';
+import { useState } from '@wordpress/element';
 import {
 	InspectorControls,
 	BlockControls,
 	AlignmentToolbar,
-	MediaUpload, MediaUploadCheck
 } from '@wordpress/block-editor';
 
 import {
@@ -19,8 +18,7 @@ import {
 	RangeControl,
 	ToggleControl,
 	TextControl,
-	Button, 
-	TextareaControl,
+	BaseControl,
 
 } from '@wordpress/components';
 
@@ -46,7 +44,7 @@ const Inspector = (props) => {
 			threecanvheight,
 			threecanvheightUnit,
 			threecanvwidthUnit,
-			align, 
+			align,
 			td_load_iter
 		},
 		setAttributes,
@@ -83,15 +81,18 @@ const Inspector = (props) => {
 								initialOpen={true}
 								title={__('Loader')}
 							>
-								<TextControl
-									label={__('Public File URL')}
-									value={url}
-									onChange={(value) => {
-										setAttributes({
-											url: value
-										});
-									}}
-								/>
+								<BaseControl help={__('You can get url when you do Export - Code - React - URL')}>
+
+									<TextControl
+										label={__('React URL')}
+										value={url}
+										onChange={(value) => {
+											setAttributes({
+												url: value
+											});
+										}}
+									/>
+								</BaseControl>
 								<ToggleControl
 									label={__('Load only on iteraction')}
 									checked={td_load_iter}
@@ -156,7 +157,7 @@ const Inspector = (props) => {
 												</div>
 											</div>
 										</div>
-										<div style={{width: '100%'}}>
+										<div style={{ width: '100%' }}>
 											<RangeControl
 												value={
 													threecanvwidth[deviceStateIndex] == null
@@ -244,7 +245,7 @@ const Inspector = (props) => {
 												</div>
 											</div>
 										</div>
-										<div style={{width: '100%'}}>
+										<div style={{ width: '100%' }}>
 											<RangeControl
 												value={
 													threecanvheight[deviceStateIndex] == null
