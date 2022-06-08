@@ -16,48 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define('GREENSHIFTSPLINE_DIR_URL', plugin_dir_url(__FILE__));
 define( 'GREENSHIFTSPLINE_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
-// Define Freemius
-if ( ! function_exists( 'gspb_spline_freemius' ) ) {
-    // Create a helper function for easy SDK access.
-    function gspb_spline_freemius() {
-        global $gspb_spline_freemius;
 
-        if ( ! isset( $gspb_spline_freemius ) ) {
-            // Include Freemius SDK.
-            if ( file_exists( dirname( dirname( __FILE__ ) ) . '/greenshift-animation-and-page-builder-blocks/fs/start.php' ) ) {
-                // Try to load SDK from parent plugin folder.
-                require_once dirname( dirname( __FILE__ ) ) . '/greenshift-animation-and-page-builder-blocks/fs/start.php';
-            } else {
-                return;
-            }
-
-            $gspb_spline_freemius = fs_dynamic_init( array(
-                'id'                  => '10067',
-                'slug'                => 'greenshiftquery',
-                'type'                => 'plugin',
-                'public_key'          => 'pk_c13054cce47b96031b396db7000b9',
-                'is_premium'          => true,
-                'is_premium_only'     => true,
-                'has_paid_plans'      => true,
-                'is_org_compliant'    => false,
-                'parent'              => array(
-                    'id'         => '9740',
-                    'slug'       => 'greenshift-animation-and-page-builder-blocks',
-                    'public_key' => 'pk_672fcb7f9a407e0858ba7792d43cb',
-                    'name'       => 'Greenshift - Animation and page builder for Gutenberg Wordpress',
-                ),
-                'menu'                => array(
-                    'first-path'     => 'plugins.php',
-                    'account'        => false,
-                    'support'        => false,
-                ),
-                'secret_key'          => 'sk_xiN5oP3t?{iB:T7zHntFgomy~Ia5y',
-            ) );
-        }
-
-        return $gspb_spline_freemius;
-    }
-}
 
 function gspb_spline_freemius_is_parent_active_and_loaded() {
     // Check if the parent's init SDK method exists.
